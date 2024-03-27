@@ -4,6 +4,11 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello World!");
+        var shoe = new Shoe();
+
+        for (int i = 0; i < 52 * 4; i++)
+        {
+            Console.WriteLine(shoe.DrawCard());
+        }
     }
 }
