@@ -2,7 +2,7 @@ namespace Blackjack;
 
 public class Deck
 {
-    private List<Card> Cards { set; get; } = new();
+    private List<Card> Cards { get; } = new();
 
     public Deck()
     {
@@ -23,8 +23,8 @@ public class Deck
             throw new InvalidOperationException("Deck is empty");
         }
 
-        List<Card> cards = Cards;
-        Cards = new();
+        var cards = Cards.ToList();
+        Cards.Clear();
         return cards;
     }
 }
